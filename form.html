@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Page background */
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Outer wrapper */
+    .signup-wrappwr {
+      width: 100%;
+      padding: 20px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 960px;
+      margin: auto;
+    }
+
+    /* Card */
+    .signup-wrapp {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Heading */
+    .signup-wrapp h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .signup-wrapp h2 span {
+      color: #667eea;
+    }
+
+    /* Layout */
+    .signup-form-wrapper {
+      display: flex;
+      gap: 40px;
+    }
+
+    .signup-form-wrapp,
+    .signup-social-wrap {
+      flex: 1;
+    }
+
+    /* Form */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .form-control:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+    }
+
+    /* Button */
+    .signup-primary {
+      width: 100%;
+      padding: 12px;
+      background: #667eea;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .signup-primary:hover {
+      background: #556cd6;
+    }
+
+    /* Social section */
+    .signup-social-wrap {
+      text-align: center;
+      border-left: 1px solid #eee;
+      padding-left: 30px;
+    }
+
+    .signup-social-wrap p {
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    /* Social buttons */
+    .signup-social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #333;
+      border: 1px solid #ddd;
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .signup-social-btn img {
+      width: 20px !important;
+    }
+
+    .signup-social-btn:hover {
+      background: #f5f5f5;
+    }
+
+    /* Terms text */
+    .agree-text {
+      font-size: 12px;
+      color: #666;
+      white-space: nowrap;
+      margin-top: 20px;
+    }
+
+    .agree-text a {
+      color: #667eea;
+      text-decoration: none;
+      display: inline;
+    }
+
+    .agree-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* passs */
+    .password-wrapper {
+      position: relative;
+    }
+
+    .password-wrapper .form-control {
+      padding-right: 40px;
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #888;
+      font-size: 16px;
+    }
+
+    .toggle-password:hover {
+      color: #667eea;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .signup-form-wrapper {
+        flex-direction: column;
+      }
+
+      .signup-social-wrap {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+      }
+    }
+  </style>
+  <body>
+    <div class="signup-wrappwr">
+      <div class="container">
+        <div class="signup-wrapp">
+          <h2><span>Sign UP</span></h2>
+          <div class="signup-form-wrapper">
+            <div class="signup-form-wrapp">
+              <form action="/">
+                <div class="form-group">
+                  <label for="">Full Name*</label>
+                  <input
+                    type="name"
+                    class="form-control"
+                    placeholder="Enter your Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="">Email*</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter your Email"
+                    aria-describedby="emailHelp"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label>Create Password*</label>
+                  <div class="password-wrapper">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      placeholder="Create Password"
+                      required
+                    />
+                    <i
+                      class="fa-solid fa-eye-slash toggle-password"
+                      onclick="togglePassword('password', this)"
+                    ></i>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Confirm Password*</label>
+                  <div class="password-wrapper">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="confirmPassword"
+                      placeholder="Confirm Password"
+                      required
+                    />
+                    <i
+                      class="fa-solid fa-eye-slash toggle-password"
+                      onclick="togglePassword('confirmPassword', this)"
+                    ></i>
+                  </div>
+                </div>
+
+                <button class="signup-primary" type="submit">Submit</button>
+              </form>
+            </div>
+            <div class="signup-social-wrap">
+              <p>or Sign Up via</p>
+              <p>
+                <a href="#" class="signup-social-btn" alt="Facebook">
+                  <img
+                    style="width: 4%"
+                    src="https://www.svgrepo.com/show/494341/facebook.svg"
+                  />Facebook
+                </a>
+              </p>
+              <p>
+                <a href="#" class="signup-social-btn" alt="Google">
+                  <img
+                    style="width: 4%"
+                    src="https://www.svgrepo.com/show/314058/google-plus.svg"
+                  />Google
+                </a>
+              </p>
+              <p class="agree-text">
+                by clicking submit you agree to the
+                <a href="#" alt="Terms and Conditions">Terms and Conditions</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function togglePassword(inputId, icon) {
+        const input = document.getElementById(inputId);
+        if (input.type === "password") {
+          input.type = "text";
+          icon.classList.remove("fa-eye-slash");
+          icon.classList.add("fa-eye");
+        } else {
+          input.type = "password";
+          icon.classList.remove("fa-eye");
+          icon.classList.add("fa-eye-slash");
+        }
+        input.focus();
+      }
+    </script>
+  </body>
+</html>
